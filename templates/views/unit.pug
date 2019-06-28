@@ -1,15 +1,108 @@
 extends ../layouts/default
 
 block intro
-	.container
-		h1 Units
+	section#intro
+		.intro-container
+			#introCarousel.carousel.slide.carousel-fade(data-ride='carousel')
+				ol.carousel-indicators
+				.carousel-inner(role='listbox')
+					.carousel-item.active
+						.carousel-background
+							img(src='https://res.cloudinary.com/simpleview/image/upload/v1486505969/clients/vancouverbc/Aerial_Sunset_Vancouver_d3_copy_1bb86ed0-1edc-4cda-841d-0b033ca0bb72.jpg', alt='')
+						.carousel-container
+							.carousel-content
+								h2= unit.name
+								p #{unit.location.suburb}, #{ unit.location.state } #{unit.location.country}
+								a.btn-get-started.scrollto(href='#checkin') Get Started
+				//- a.carousel-control-prev(href='#introCarousel', role='button', data-slide='prev')
+				//- 	span.carousel-control-prev-icon.ion-chevron-left(aria-hidden='true')
+				//- 	span.sr-only Previous
+				//- a.carousel-control-next(href='#introCarousel', role='button', data-slide='next')
+				//- 	span.carousel-control-next-icon.ion-chevron-right(aria-hidden='true')
+				//- 	span.sr-only Next
 	
 block content
-	.container
-		if unit
-			h2: a(href=`/unit/${unit._id}`)= unit.name
-			p !{ unit.location.street1 }
-			hr
-				 
-		else
-			h3.text-muted There are no image units yet.
+	section#checkin
+		.container
+			header.section-header.wow.fadeInUp.pt-5
+				h3 Checkin 
+				p:strong SELF CHECKIN INSTRUCTION
+				ul
+					li If you are having problems with the checking-in/ out process, locating the apartment, house rules etc, please contact us by sending a message on Airbnb.
+					li In case for emergency, please contact by Airbnb message or telephone below ***At day time before late night please try to contact by Airbnb message & the E-mail you apply with the booking website if possible , due to the messages can carry with your personal information will be easier to let me know your booking formation and help you even faster then by a phone call.
+					li English "+1 604 757 4178" (Don)
+			
+				p  !{unit.checkinInfo}
+			//- .row
+			//- 	.col-lg-4.col-md-6.box.wow.bounceInUp(data-wow-duration='1.4s')
+			//- 		.icon
+			//- 			i.ion-ios-analytics-outline
+			//- 		h4.title
+			//- 			a(href='') Lorem Ipsum
+			//- 		p.description
+			//- 			| Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident
+			//- 	.col-lg-4.col-md-6.box.wow.bounceInUp(data-wow-duration='1.4s')
+			//- 		.icon
+			//- 			i.ion-ios-bookmarks-outline
+			//- 		h4.title
+			//- 			a(href='') Dolor Sitema
+			//- 		p.description
+			//- 			| Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata
+			//- 	.col-lg-4.col-md-6.box.wow.bounceInUp(data-wow-duration='1.4s')
+			//- 		.icon
+			//- 			i.ion-ios-paper-outline
+			//- 		h4.title
+			//- 			a(href='') Sed ut perspiciatis
+			//- 		p.description
+			//- 			| Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur
+			//- 	.col-lg-4.col-md-6.box.wow.bounceInUp(data-wow-delay='0.1s', data-wow-duration='1.4s')
+			//- 		.icon
+			//- 			i.ion-ios-speedometer-outline
+			//- 		h4.title
+			//- 			a(href='') Magni Dolores
+			//- 		p.description
+			//- 			| Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+			//- 	.col-lg-4.col-md-6.box.wow.bounceInUp(data-wow-delay='0.1s', data-wow-duration='1.4s')
+			//- 		.icon
+			//- 			i.ion-ios-barcode-outline
+			//- 		h4.title
+			//- 			a(href='') Nemo Enim
+			//- 		p.description
+			//- 			| At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque
+			//- 	.col-lg-4.col-md-6.box.wow.bounceInUp(data-wow-delay='0.1s', data-wow-duration='1.4s')
+			//- 		.icon
+			//- 			i.ion-ios-people-outline
+			//- 		h4.title
+			//- 			a(href='') Eiusmod Tempor
+			//- 		p.description
+			//- 			| Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi
+	section#parking.section-bg.wow.fadeInUp.pt-5
+		.container
+			header.section-header
+				h3 Parking
+			.owl-carousel.testimonials-carousel
+	section#contact.section-bg.wow.fadeInUp.pt-5
+		.container
+			.section-header
+				h3 Contact Us
+				p
+					| Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+			.row.contact-info
+				.col-md-4
+					.contact-address
+						i.ion-ios-location-outline
+						h3 Address
+						address A108 Adam Street, NY 535022, USA
+				.col-md-4
+					.contact-phone
+						i.ion-ios-telephone-outline
+						h3 Phone Number
+						p
+							a(href='tel:+155895548855') +1 5589 55488 55
+				.col-md-4
+					.contact-email
+						i.ion-ios-email-outline
+						h3 Email
+						p
+							a(href='mailto:info@example.com') info@example.com
+	
