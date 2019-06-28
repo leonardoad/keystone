@@ -24,6 +24,8 @@ keystone.init({
 	'auto update': true,
 	'session': true,
 	'auth': true,
+	'wysiwyg cloudinary images':  true,
+	'wysiwyg additional options':  { 'external_plugins': { 'uploadimage': '/js/uploadimage/plugin.min.js' } },
 	'user model': 'User',
 });
 
@@ -50,6 +52,7 @@ keystone.set('nav', {
 	enquiries: 'enquiries',
 	users: 'users',
 	areas: 'areas',
+	unit: 'units',
 });
 
 // Start Keystone to connect to your database and initialise the web server

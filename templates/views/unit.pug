@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block intro
+	.container
+		h1 Units
+	
+block content
+	.container
+		if unit
+			h2: a(href=`/unit/${unit._id}`)= unit.name
+			p !{ unit.location.street1 }
+			hr
+				 
+		else
+			h3.text-muted There are no image units yet.

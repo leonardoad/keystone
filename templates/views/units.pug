@@ -1,0 +1,16 @@
+extends ../layouts/default
+
+block intro
+	.container
+		h1 Units
+	
+block content
+	.container
+		if units.length
+			each area in units
+				h2: a(href=`/unit/${area._id}`)= area.name
+				p !{ area.location.street1 }
+				hr
+				 
+		else
+			h3.text-muted There are no image units yet.
