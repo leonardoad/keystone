@@ -1,0 +1,15 @@
+extends ../layouts/default
+
+block intro
+	.container
+		h1 Areas
+	
+block content
+	.container
+		if areas.length
+			each area in areas
+				h2= area.name
+				hr
+				 
+		else
+			h3.text-muted There are no image areas yet.
